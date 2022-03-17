@@ -1,0 +1,25 @@
+stages:
+  - build
+  - lint
+  - test
+
+build:
+  stage: build
+  script:
+    - echo '-> build!'
+  rules:
+    - changes:
+      - build/**/*
+
+lint:
+  stage: lint
+  script:
+    - echo '-> lint!'
+  rules:
+    - changes:
+      - lint/**/*
+
+test:
+  stage: test
+  script:
+    - echo '-> test!'
